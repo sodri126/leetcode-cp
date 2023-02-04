@@ -40,7 +40,10 @@ func romanToInt(s string) int {
 	}
 
 	for i := 0; i < len(s); i++ {
-		if i < len(s)-1 && listRoman[s[i]].Index%2 == 0 && listRoman[s[i]].Index < len(listRoman)-1 && s[i] != s[i+1] && (listRoman[s[i+1]].Value-listRoman[s[i]].Value) > 0 {
+		if i < len(s)-1 && listRoman[s[i]].Index%2 == 0 &&
+			listRoman[s[i]].Index < len(listRoman)-1 &&
+			s[i] != s[i+1] &&
+			(listRoman[s[i+1]].Value-listRoman[s[i]].Value) > 0 {
 			total += listRoman[s[i+1]].Value - listRoman[s[i]].Value
 			i++
 		} else {
